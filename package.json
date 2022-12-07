@@ -4,10 +4,9 @@
   "description": "Dinamic portfolio website",
   "main": "build/app.js",
   "scripts": {
-    "start": "npm-run-all build dev",
-    "build": "npm-run-all clean tsc copy-assets",
-    "dev": "node .",
-    "start:dev": "nodemon -L src/app.ts",
+    "start": "npm run build && node .",
+    "dev": "nodemon -L src/app.ts",
+    "build": "npm run clean && npm run tsc && npm run copy-assets",
     "copy-assets": "ts-node tools/copyAssets",
     "tsc": "npx tsc",
     "clean": "rimraf build/*",
